@@ -20,7 +20,10 @@ def create_jwt_claim():
         'iat': now.timestamp(),
         'exp': exp.timestamp(),
         'nbf': nbf.timestamp(),
-        'username': 'andrew@redacted.com'
+        'username': 'andrew@redacted.com',
+        'sub': 'andrew@redacted.com',
+        'name': 'andrew',
+
     }
     return jwt.encode(payload, private_key, algorithm="RS256")
 
@@ -36,7 +39,7 @@ def grafana_iframes():
       </div>
       <div>
         <a href="http://localhost:9090/?orgId=0&kiosk&mytoken={token}">auto-login with header token</a>
-        <iframe width="400" height="400" src="http://localhost:9090/?orgId=0&kiosk&mytoken={token}">blank</iframe>
+        <iframe width="400" height="400" src="http://localhost:9090/?orgId=0&mytoken={token}">blank</iframe>
       </div>  
     </body></html>
     '''
