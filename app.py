@@ -39,7 +39,7 @@ def grafana_iframes():
       </div>
       <div>
         <a href="http://localhost:9090/?orgId=0&kiosk&mytoken={token}">auto-login with header token</a>
-        <iframe width="400" height="400" src="http://localhost:9090/?orgId=0&mytoken={token}">blank</iframe>
+        <iframe width="400" height="400" src="http://localhost:9090/?orgId=0&kiosk&mytoken={token}">blank</iframe>
       </div>  
     </body></html>
     '''
